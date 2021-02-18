@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> WEB BLOCK CALENDAR</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets\css\style.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+		
+	</head>
+	<body>
+		<header>
+			<title> WEB BLOCK CALENDAR</title> 			
+			<h1 class="titulo-header">
+				Agendamento de procedimento
+			</h1>
+		</header>
+		<main id="main" class="container-fluid"> 
+			<section class="formularios row">
+				<div class="form-box col-sm-6">
+					<img src="assets\imgs\cadIcon.png" />
+					<h2 class="titulo">Cadastro</h2>
+					<form id="app" @submit="checkForm" action="/something" method="post" novalidate="true"> 
+						<div class="inputLabel">
+							<label for="inputNome" class="col-sm-2 col-form-label">Nome:</label>                    
+							<input type="text" name="inputNome" id="inputNome" v-model="inputNome" placeholder="Digite o seu Nome completo"/>
+							
+						</div>
+						<div class="inputLabel" >
+							<label for="inputTelefone" class="col-sm-2 col-form-label">Telefone:</label>
+							<input type="text" name="inputTelefone" id="inputTelefone" v-model="inputTelefone" placeholder="(DDD)_____-____"/>
+						</div>
+						<div class="inputLabel">
+							<label for ="inputEmail" class="col-sm-2 col-form-label">E-mail:</label>
+							<input type="text" name="inputEmail" id="inputEmail" v-model="inputEmail" placeholder="Digite o seu E-mail"/>
+						</div>
+						<div class="inputLabel">
+							<label for="inputSenha" class="col-sm-2 col-form-label">Senha:</label>
+							<input type="password" name="inputSenha" id="inputSenha" v-model="inputSenha" placeholder="Digite a sua senha">
+						</div>
+						<div class="inputLabel">
+							<label for="inputSenha2" class="col-sm-2 col-form-label">Senha:</label>
+							<input type="password" name="inputSenha2" id="inputSenha2" v-model="inputSenha2" placeholder="Confirme a sua senha">
+						</div>
+						<input type="submit" value="Cadastrar"/>
+						<section class="box-mensagem ">
+							<p v-if="errors.length">
+								<br/>
+								<b>Por favor corrija os seguintes erros:</b>
+								<ul>
+									<li v-for="error in errors">{{ error }}</li>
+								</ul>
+							</p>
+						</section>
+					</form>
+				</div>
+			</section>
+		</main>
+		<script type="text/javascript" src="script.js" charset="ISO-8859-1"></script>
+	</body>
+</html>
+
