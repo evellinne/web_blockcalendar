@@ -3,8 +3,7 @@ module.exports = {
     host: 'localhost',
     username: 'admin',
     password: 'admin',
-    database: 'teste',
-    //database: 'app_agendamento',
+    database: 'projetoweb',
     define: {
         timestamps: false,
         freezeTableName: true,
