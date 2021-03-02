@@ -7,8 +7,11 @@ routes.get('/', (req, res) => {
 });
 
 //Rota de cadastro de usuário
-routes.get('/usuarios', ControllerUsuario.index);
+routes.get('/usuarios', ControllerUsuario.all);
 routes.post('/cadastro', ControllerUsuario.store);
+routes.post('/usuario', ControllerUsuario.index);
+routes.delete('/usuario', ControllerUsuario.remove);
+routes.put('/usuario', ControllerUsuario.edit);
 
 
 module.exports = routes;
