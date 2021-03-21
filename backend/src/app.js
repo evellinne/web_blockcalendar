@@ -14,6 +14,13 @@ const app = express();
     app.use(routes);
     //app.listen(3000);
 
+//Início Evellinne
+var cors = require('cors')
+
+app.use(cors())
+
+//Fim Evellinne
+
 https.createServer(httpsOptions, app).listen(3000, function(){
     console.log('Servidor funcionando em https://localhost:3000');
 });
