@@ -1,4 +1,4 @@
-﻿* {
+* {
     box-sizing: border-box;
 }
 
@@ -145,54 +145,4 @@ input[type="submit"] {
         margin: 0 10px 10px;
     }
 
-}
-
-
-
-.invLine1{
-	 height: 100px;
-}
-.invCol1{
-	border: 2px red;
-	background-color: #ccffcc;
-}
-
-.btn-cadastrar{
-	float: right;
-	min-width: 200px;
-	
-}
-.container-fluid{
-	padding: 0px;
-}
-
-.form-group row{
-	margin: 0px;
-}
-
-#divForm{
-	max-width: 600px;
-}
-
-#tituloPaginaCadastro{	
-	text-align: center;
-	vertical-align: middle;
-}
-
-.col-form-label{
-    float: left;
-}
-
-label{
-    width: 30%;
-    padding-top: 3px;
-    text-align: left;
-
-}
-input{
-    width: 70%;
-}
-
-.box-error{
-    padding-top: 10px;
 }
