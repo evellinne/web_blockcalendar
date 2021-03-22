@@ -9,18 +9,14 @@ const httpsOptions = {
     cert: fs.readFileSync(path.join(__dirname, 'config','ssl', 'server.crt')),
     key: fs.readFileSync(path.join(__dirname, 'config','ssl', 'server.key'))
 };
+
+const cors = require("cors");
 const app = express();
-    app.use(express.json());
-    app.use(routes);
-    //app.listen(3000);
 
-//Início Evellinne
-var cors = require('cors')
+app.use(cors());
+app.use(express.json());
+app.use(routes);
 
-app.use(cors())
-
-//Fim Evellinne
-
-https.createServer(httpsOptions, app).listen(3000, function(){
+https.createServer(httpsOptions, app).listen(3000, () => {
     console.log('Servidor funcionando em https://localhost:3000');
 });
