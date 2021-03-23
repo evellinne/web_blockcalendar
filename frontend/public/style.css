@@ -6,6 +6,10 @@ body{
     margin: 0;
     padding: 0;
     background-color: #e2e2e2;
+    background-image: url("bg-sobrancelhas.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
     font-family: Montserrat;
 }
 
@@ -30,6 +34,7 @@ header {
 #main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     max-width: 800px;
     margin: 0 auto;
     padding-top: 20px;
@@ -38,7 +43,7 @@ header {
 .formularios {
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: center; 
 }
 
 .form-box, .box-mensagem {
@@ -50,7 +55,8 @@ header {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 .form-box {
-    width: calc( (100% - 15px) / 2);
+    width: calc( (100% - 15px) / 2);    
+    
 }
 
 .form-box img {
@@ -102,7 +108,7 @@ input[type="password"] {
 }
 
 input[type="submit"] {
-    background-color: #0482bd;
+    background-color: #0b75a7;
     border: none;
     height: 50px;
     color: #fff;
@@ -110,7 +116,8 @@ input[type="submit"] {
     font-weight: 600;
     border-radius: 0;    
     cursor: pointer;
-     width: 100%;
+    width: 90%!important;
+    margin: 10px 0 10px 0;
 }
 .titulo-erro{
     color: #f00;
@@ -144,5 +151,9 @@ input[type="submit"] {
     .form-box {
         margin: 0 10px 10px;
     }
+}
 
+#navbarNavAltMarkup{
+    justify-content: flex-end;
+      
 }

@@ -1,5 +1,6 @@
 <template>
-    <main id="main" class="container-fluid"> 
+    <main id="main" class="container-fluid">  
+        <h1>Faça seu cadastro</h1>      
 		<section class="formularios row">
 			<div class="form-box col-sm-6">
                 <img src="..\assets\cadIcon.png" />
@@ -13,14 +14,16 @@
                         <input type="text" name="telefone" id="telefone" v-model="telefone" placeholder="(DDD)_____-____"/>
                     </div>
                     <div class="inputLabel">
-                        <label for ="email" class="col-sm-2 col-form-label">E-mail:</label>
+                        <label for ="email" class="col-sm-2 col-form-label">Email:</label>
                         <input type="text" name="email" id="email" v-model="email" placeholder="Digite o seu E-mail"/>
                     </div>
                     <div class="inputLabel">
                         <label for="senha" class="col-sm-2 col-form-label">Senha:</label>
                         <input type="password" name="senha" id="senha" v-model="senha" placeholder="Digite a sua senha">
                     </div>                    
-                    <input type="submit" value="Cadastrar"/>                               
+                    <div>
+                        <input type="submit" action="" value="Cadastrar"/>
+                    </div>                                
                 </form>                
             </div>            
         </section>        
@@ -47,12 +50,10 @@ export default {
                 email: this.email,
                 senha: this.senha
             })
-            .then( response => {
-                console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOI RESPOSTA");
+            .then( response => {                
                 console.log(response);
             })
             .catch( error => {
-                console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOI ERRO");
                 console.log(error);
             })
         }
