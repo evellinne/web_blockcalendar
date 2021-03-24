@@ -20,7 +20,7 @@
                     <div class="inputLabel">
                         <label for="senha" class="col-sm-2 col-form-label">Senha:</label>
                         <input type="password" name="senha" id="senha" v-model="senha" placeholder="Digite a sua senha">
-                    </div>                    
+                    </div>                                        
                     <div>
                         <input type="submit" action="" value="Cadastrar"/>
                     </div>                                
@@ -31,8 +31,8 @@
 </template>
 
 <script>
-export default {    
-    //name: "FormUsuario",
+export default {
+    name: 'Cadastro',
     data(){
         return {       
             nome:'',
@@ -44,12 +44,16 @@ export default {
         },
     methods:{
         submitForm() {
-            this.axios.post('/cadastro', {
+
+            const dados ={
                 nome: this.nome,
-                telefone:this.telefone,
+                telefone: this.telefone,
                 email: this.email,
                 senha: this.senha
-            })
+            }
+
+
+            this.axios.post('/cadastro', dados)
             .then( response => {                
                 console.log(response);
             })

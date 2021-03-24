@@ -27,6 +27,8 @@
 
 <script>
 export default {
+    name: 'Login',
+
     state: {},
     getters: {},
     mutations: {},
