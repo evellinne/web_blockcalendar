@@ -7,11 +7,11 @@
                 <form @submit.prevent="submitLogin" method="POST">
                     <div class="inputLabel">
                         <label for ="email" class="col-sm-2 col-form-label">Email:</label>
-                        <input type="text" name="email" id="email" v-model="email" placeholder="Digite o seu E-mail"/>
+                        <input type="text"  v-model="email" placeholder="Digite o seu E-mail"/>
                     </div>
                     <div class="inputLabel">
                         <label for="senha" class="col-sm-2 col-form-label">Senha:</label>
-                        <input type="password" name="senha" id="senha" v-model="senha" placeholder="Digite a sua senha">
+                        <input type="password" v-model="senha" placeholder="Digite a sua senha">
                     </div>  
                     <div>
                         <input type="submit" action="" value="Entrar"/>
@@ -26,13 +26,26 @@
 
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'Login',
 
-    state: {},
-    getters: {},
-    mutations: {},
-    actions:{}
+    data() {
+        return{
+            email: '',
+            senha: ''
+        }
+    },
+    methods: {
+       async submitLogin(){
+           const response = await axios.post('login', {
+               email: this.email,
+               senha: this.senha
+           });
+            console.log(response);
+        }
+    }
 }
 </script>
 

@@ -4,22 +4,22 @@
 		<section class="formularios row">
 			<div class="form-box col-sm-6">
                 <img src="..\assets\cadIcon.png" />
-                <form @submit.prevent="submitForm" method="POST"> 
+                <form @submit.prevent="submitCadastro" method="POST"> 
                     <div class="inputLabel">
                         <label for="nome" class="col-sm-2 col-form-label">Nome:</label>                    
-                        <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite o seu Nome completo"/>                
+                        <input type="text"  placeholder="Digite o seu Nome completo"/>                
                     </div>
                     <div class="inputLabel" >
                         <label for="telefone" class="col-sm-2 col-form-label">Telefone:</label>
-                        <input type="text" name="telefone" id="telefone" v-model="telefone" placeholder="(DDD)_____-____"/>
+                        <input type="text"  v-model="telefone" placeholder="(DDD)_____-____"/>
                     </div>
                     <div class="inputLabel">
                         <label for ="email" class="col-sm-2 col-form-label">Email:</label>
-                        <input type="text" name="email" id="email" v-model="email" placeholder="Digite o seu E-mail"/>
+                        <input type="text"  v-model="email" placeholder="Digite o seu E-mail"/>
                     </div>
                     <div class="inputLabel">
                         <label for="senha" class="col-sm-2 col-form-label">Senha:</label>
-                        <input type="password" name="senha" id="senha" v-model="senha" placeholder="Digite a sua senha">
+                        <input type="password"  v-model="senha" placeholder="Digite a sua senha">
                     </div>                                        
                     <div>
                         <input type="submit" action="" value="Cadastrar"/>
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'Cadastro',
     data(){
@@ -43,23 +45,15 @@ export default {
 
         },
     methods:{
-        submitForm() {
+        async submitCadastro() {
 
-            const dados ={
+            await axios.post('cadastro', {
                 nome: this.nome,
                 telefone: this.telefone,
                 email: this.email,
                 senha: this.senha
-            }
-
-
-            this.axios.post('/cadastro', dados)
-            .then( response => {                
-                console.log(response);
-            })
-            .catch( error => {
-                console.log(error);
-            })
+            });            
+            this.$router.push('/login');
         }
     }
 }
