@@ -5,25 +5,25 @@
 			<div class="form-box col-sm-6">
                 <img src="..\assets\cadIcon.png" />
                 <form @submit.prevent="submitCadastro" method="POST"> 
-                    <div class="inputLabel">
+                    <div class=" mb-3 inputLabel">
                         <label for="nome" class="col-sm-2 col-form-label">Nome:</label>                    
-                        <input type="text"  placeholder="Digite o seu Nome completo"/>                
+                        <input type="text" class="form-control" placeholder="Digite o seu Nome completo"/>                
                     </div>
-                    <div class="inputLabel" >
+                    <div class="mb-3 inputLabel" >
                         <label for="telefone" class="col-sm-2 col-form-label">Telefone:</label>
-                        <input type="text"  v-model="telefone" placeholder="(DDD)_____-____"/>
+                        <input type="text" class="form-control" v-model="telefone" placeholder="(DDD)_____-____"/>
                     </div>
-                    <div class="inputLabel">
+                    <div class="mb-3 inputLabel">
                         <label for ="email" class="col-sm-2 col-form-label">Email:</label>
-                        <input type="text"  v-model="email" placeholder="Digite o seu E-mail"/>
+                        <input type="text" class="form-control"  v-model="email" placeholder="Digite o seu E-mail"/>
                     </div>
-                    <div class="inputLabel">
+                    <div class="mb-3 inputLabel">
                         <label for="senha" class="col-sm-2 col-form-label">Senha:</label>
-                        <input type="password"  v-model="senha" placeholder="Digite a sua senha">
-                    </div>                                        
-                    <div>
-                        <input type="submit" action="" value="Cadastrar"/>
-                    </div>                                
+                        <input type="password" class="form-control" v-model="senha" placeholder="Digite a sua senha">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                                   
                 </form>                
             </div>            
         </section>        
@@ -85,15 +85,19 @@ export default {
 	vertical-align: middle;
 }
 .col-form-label{
-    float: left;
+    float: left!important;
 }
 label{
-    width: 30%;
-    padding-top: 3px;
-    text-align: left;
+    width: 30%!important;
+    padding-top: 3px!important;
+    text-align: left!important;
 }
 input{
     width: 70%;
+    background-color:rgb(235, 239, 243);
+    border: 1px solid #ced4da;
+    text-align: left!important;
+    display:inline-flex;
 }
 
 .box-error{

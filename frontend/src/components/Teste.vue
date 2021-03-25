@@ -7,47 +7,43 @@
                     <form @submit.prevent="submitLogin" method="POST">
                         <div class=" mb-3 inputLabel">
                             <label for="email" class="col-sm-2 col-form-label">Email</label>
-                            <input type="email" class="form-control" v-model="email" placeholder="Digite o seu E-mail">
+                            <input type="email" class="form-control" v-model="inputEmail3">
                             
                         </div>
                         <div class=" mb3 inputLabel">
                             <label for="senha" class="col-sm-2 col-form-label">Senha</label>
-                            <input type="password" class="form-control" v-model="senha" placeholder="Digite a seua Senha">
+                            <input type="password" class="form-control" v-model="senha">
                             
                         </div> 
                         <button type="submit" class="btn btn-primary">Entrar</button>
                     </form>
                 </div>
             </section>        
-    </main>       
+    </main>
+
+    <!--
+                    <div class="inputLabel">
+                        <label for ="email" class="col-sm-2 col-form-label">Email:</label>
+                        <input type="text"  v-model="email" placeholder="Digite o seu E-mail"/>
+                    </div>
+                    <div class="inputLabel">
+                        <label for="senha" class="col-sm-2 col-form-label">Senha:</label>
+                        <input type="password"  v-model="senha" placeholder="Digite a sua senha">
+                    </div>            
+        -->
+    <!--<div class="container">
+            <div class="row" >
+                <div class="col-12">
+                    <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Epic Popover" data-content="And here's some amazing content. It's very engaging. Right?">Popover Toggle</button>
+                </div>
+            </div>
+    </div>-->
 </template>
 
-
-
 <script>
-import axios from 'axios'
 
-export default {
-    name: 'Login',
-
-    data() {
-        return{
-            email: '',
-            senha: ''
-        }
-    },
-    methods: {
-       async submitLogin(){
-           const response = await axios.post('login', {
-               email: this.email,
-               senha: this.senha
-           });
-            console.log(response);
-        }
-    }
-}
+ 
 </script>
-
 
 <style scoped>
 .invLine1{
