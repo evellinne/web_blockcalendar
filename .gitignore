@@ -1,3 +1,4 @@
 backend/node_modules/
 backend/src/config/database.js
 frontend/node_modules/
+backend/src/config/credential.js
