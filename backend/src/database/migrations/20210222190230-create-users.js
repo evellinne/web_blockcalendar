@@ -1,4 +1,5 @@
 'use strict';
+//const bcrypt = require("bcrypt");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -21,6 +22,7 @@ module.exports = {
           }
       },
       email: {
+          unique: true,
           allowNull: false,
           type: Sequelize.STRING(40),
           validate: {
@@ -28,6 +30,7 @@ module.exports = {
           }
       },
       telefone: {
+          unique: true,
           allowNull: false,
           type: Sequelize.STRING(15),
           validate: {
@@ -44,7 +47,7 @@ module.exports = {
     }, {
       timestamps: false,
       //freezeTableName: true,
-      indexes: [
+      /*indexes: [
         {
           unique: true,
           fields: ['telefone']
@@ -53,7 +56,15 @@ module.exports = {
           unique: true,
           fields: ['email']
         }
-      ]
+      ],*/
+      /*instanceMethods: {
+        generateHash(senha) {
+            return bcrypt.hash(senha, bcrypt.genSaltSync(8));
+        },
+        validPassword(senha) {
+            return bcrypt.compare(senha, this.senha);
+        }
+    }*/
     });
   },
   down: async (queryInterface, Sequelize) => {

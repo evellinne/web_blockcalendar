@@ -11,8 +11,9 @@ Usuario.init(connection);
 Procedimento.init(connection);
 UsuarioProcedimento.init(connection);
 
-/*Sequelize.authenticate().then(() => {
-    console.log('Conexão estabelecida');
-}).catch(err => {
-    console.error('Não foi possível se conectar com o banco de dados', err);
-});*/
+
+Usuario.associate(connection.models);
+Procedimento.associate(connection.models);
+UsuarioProcedimento.associate(connection.models);
+
+module.exports = connection;

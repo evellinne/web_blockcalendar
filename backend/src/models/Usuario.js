@@ -12,6 +12,13 @@ class Usuario extends Model {
             sequelize
         });
     }
+    /*static beforeCreate(usuario) {
+        const hash = bcrypt.hash(usuario.senha, 10);
+        usuario.senha = hash;
+    }*/
+    static associate (models){
+        this.hasMany(models.UsuarioProcedimento, { foreignKey: 'usuario_id', as: 'procedimentosusuario'});
+    }
 };
 
 module.exports = Usuario;

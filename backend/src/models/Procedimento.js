@@ -9,6 +9,9 @@ class Procedimento extends Model {
             sequelize
         });
     }
+    static associate (models){
+        this.hasMany(models.UsuarioProcedimento, { foreignKey: 'procedimento_id', as: 'usuarioprocedimentos'});
+    }
 };
 
 module.exports = Procedimento;
