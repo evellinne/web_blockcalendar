@@ -9,7 +9,7 @@ routes.get('/', (req, res) => {
 });
 
 //Autenticação
-routes.post('/login', ControllerUsuario.authenticate);
+routes.post('/login', ControllerUsuario.authenticate); 
 routes.get('/authentication/:token', ControllerUsuario.confirmation);
 
 

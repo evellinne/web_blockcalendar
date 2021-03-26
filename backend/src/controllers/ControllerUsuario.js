@@ -4,20 +4,18 @@ const jwtoken  = require('jsonwebtoken');
 //const bcrypt = require('bcryptjs');
 const authConfig = require('../config/auth.json');
 const nodemailer =require('nodemailer');
+const MailCredential = require('../config/credential');
 
-const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: 'uipath.analisabr@gmail.com',
-      pass: '@app14n@',
-    },
-  });
+const transporter = nodemailer.createTransport(MailCredential);
 
 
 module.exports = {
     async all(req, res) {
         console.log("Retornar todos usuarios");
         const usuarios = await Usuario.findAll();
+        usuarios.forEach(function(usuario){
+            usuario.senha = undefined;
+        });
         return res.json(usuarios);
     },
     async store(req, res) {
@@ -79,6 +77,7 @@ module.exports = {
         const { id } = req.body;
 
         const usuario = await Usuario.findByPk(id);
+        usuario.senha = undefined;
         return res.json(usuario);
     },
     async remove(req, res) {
@@ -107,6 +106,7 @@ module.exports = {
                 senha: senha
             });
             
+            usuario.senha = undefined;
             res.json(usuario);
         }
         else
