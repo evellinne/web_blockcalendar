@@ -241,6 +241,45 @@ Buscar procedimento por ID
     "nome": "Fazer x"
   }
   ```
+### POST - Procedidomento por UserID
+> URL: https://localhost:3000/procedimentos-marcados
+
+Buscar procedimento pelo id de um usuário.
+
+* AUTHORIZATION
+  
+* HEADERS
+  | Content-Type | application/json |
+  |--------------|------------------|
+* BODY
+  ```
+  {
+    "id": 3
+  }
+  ```
+* RESPONSE
+  ```
+[
+  {
+    "id": 3,
+    "hora": 14,
+    "dia": "2021-01-01",
+    "usuario_id": 3,
+    "procedimento_id": 2,
+    "usuario": {
+      "id": 3,
+      ....
+    },
+    "procedimento": {
+      "id": 2,
+      ...
+    }
+  },
+  {
+    ...
+  }
+]
+  ```
 ### POST - Adicionar
 > URL: https://localhost:3000/cadastrar-procedimento
 

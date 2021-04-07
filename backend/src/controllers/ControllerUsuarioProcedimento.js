@@ -8,7 +8,7 @@ module.exports = {
         return res.json(usuarioProcedimentos);
     },
     async store(req, res) {
-        console.log("Cadastrar um usuário");
+        console.log("Cadastrar um procedimento");
         let procedimentos = req.body;
         let i = 0;
         let loop = true;
@@ -41,6 +41,26 @@ module.exports = {
 
         if(!usuarioProcedimentos){
             return res.status(400).json({ error: 'UsuarioProcedimento não existe'});
+        }
+        usuarioProcedimentos.usuario_id = undefined;
+        usuarioProcedimentos.procedimento_id = undefined;
+
+        return res.json(usuarioProcedimentos);
+    },
+    async indexUser(req, res) {
+        console.log("Consultar usuarioprocedimento por ID do cliente");
+        const { id } = req.body;
+
+        const usuarioProcedimentos = await UsuarioProcedimento.findAll({ 
+            where: {usuario_id: id}, 
+            include: [
+                {association: 'usuario'},
+                {association:'procedimento'}
+            ]
+        });
+
+        if(!usuarioProcedimentos){
+            return res.status(400).json({ error: 'Não existe UsuarioProcedimento marcado para este usuário'});
         }
         usuarioProcedimentos.usuario_id = undefined;
         usuarioProcedimentos.procedimento_id = undefined;

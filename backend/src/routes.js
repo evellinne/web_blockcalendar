@@ -35,6 +35,7 @@ routes.put('/usuarioprocedimentos', ControllerUsuarioProcedimento.edit);
 routes.delete('/usuarioprocedimentos', ControllerUsuarioProcedimento.remove);
 routes.get('/procedimentos-livres', ControllerUsuarioProcedimento.freeTime);
 routes.get('/procedimentos-marcados', ControllerUsuarioProcedimento.appointment);
+routes.post('/procedimentos-marcados', ControllerUsuarioProcedimento.indexUser);
 routes.post('/marcar-horario', ControllerUsuarioProcedimento.mark);
 
 

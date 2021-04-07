@@ -77,8 +77,13 @@ module.exports = {
         const { id } = req.body;
 
         const usuario = await Usuario.findByPk(id);
-        usuario.senha = undefined;
-        return res.json(usuario);
+        
+        if(usuario){
+            usuario.senha = undefined;
+            return res.json(usuario);
+        } else {
+            return res.json({"Mensagem":`Usuário de id = ${id} não existe`});
+        }
     },
     async remove(req, res) {
         console.log("Remover usuário por ID");

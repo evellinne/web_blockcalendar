@@ -7,8 +7,8 @@ const cors = require("cors");
 require('./database/index');
 
 const httpsOptions = {
-    cert: fs.readFileSync(path.join(__dirname, 'config','ssl', 'server.crt')),
-    key: fs.readFileSync(path.join(__dirname, 'config','ssl', 'server.key'))
+    cert: fs.readFileSync(path.join(__dirname, 'config','teste', 'cert.pem')),
+    key: fs.readFileSync(path.join(__dirname, 'config','teste', 'key.pem'))
 };
 
 const app = express();
