@@ -51,7 +51,8 @@ export default {
                 nome: this.nome,
                 telefone: this.telefone,
                 email: this.email,
-                senha: this.senha
+                senha: this.senha,
+                tipo: 0
             });            
             this.$router.push('/login');
         }

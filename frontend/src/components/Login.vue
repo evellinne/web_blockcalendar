@@ -26,6 +26,8 @@
 
 <script>
 import axios from 'axios'
+import router from '../router'
+import cookies from 'vue-cookies'
 
 export default {
     name: 'Login',
@@ -43,6 +45,12 @@ export default {
                senha: this.senha
            });
             console.log(response);
+
+            if(response.status === 200) {
+                cookies.set('id', response.data.usuario.id)
+                router.push("home");                
+            }
+            else console.error("Erro: ", response)
         }
     }
 }

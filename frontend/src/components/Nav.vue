@@ -9,8 +9,8 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="/home">Home <span class="sr-only">(Página atual)</span></a>
-          <a class="nav-item nav-link" href="#">Login</a>
-          <a class="nav-item nav-link" href="#">Sign Up</a>
+          <a class="nav-item nav-link" href="login">Login</a>
+          <a class="nav-item nav-link" href="cadastro">Sign Up</a>
         </div>
       </div>
     </nav>

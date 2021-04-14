@@ -10,7 +10,7 @@
             <br/>
             Bora lá fazer seu agendamento?
           </p>
-          <button type="button" class="btn btn-outline-dark">Login</button>
+          <button v-on:click="action" type="button" class="btn btn-outline-dark">Login</button>
         </div>
       </div>
     </div>
@@ -18,9 +18,15 @@
 </template>
 
 <script>
+import router from '../router'
 
 export default {
   name: 'Home',
-
+  methods: {
+    action: function() {
+      router.push('login')
+    }
+  }
 }
+
 </script>

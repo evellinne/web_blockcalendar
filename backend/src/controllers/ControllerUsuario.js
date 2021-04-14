@@ -54,7 +54,7 @@ module.exports = {
                 expiresIn: 1800
             },
             (err, emailToken) => {
-                const url = `https://localhost:3000/authentication/${emailToken}`;
+                const url = `http://localhost:8080/token/${emailToken}`;
 
                 transporter.sendMail({
                     to: usuario.email,

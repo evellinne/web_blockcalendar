@@ -1,8 +1,8 @@
 module.exports = {
     dialect: 'mysql',
     host: 'localhost',
-    username: 'admin',
-    password: 'admin',
+    username: 'root',
+    password: '',
     database: 'projetoweb',
     define: {
         timestamps: false,
