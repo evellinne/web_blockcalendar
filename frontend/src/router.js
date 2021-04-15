@@ -9,7 +9,6 @@ import MeusAgendamentos from './components/MeusAgendamentos.vue'
 import Teste from './components/Teste.vue'
 import Loading from './components/Loading.vue'
 
-
 Vue.use(Router)
 
 export default new Router ({

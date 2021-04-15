@@ -7,7 +7,7 @@
                 <form @submit.prevent="submitCadastro" method="POST"> 
                     <div class=" mb-3 inputLabel">
                         <label for="nome" class="col-sm-2 col-form-label">Nome:</label>                    
-                        <input type="text" class="form-control" placeholder="Digite o seu Nome completo"/>                
+                        <input type="text" class="form-control" v-model="nome" placeholder="Digite o seu Nome completo"/>                
                     </div>
                     <div class="mb-3 inputLabel" >
                         <label for="telefone" class="col-sm-2 col-form-label">Telefone:</label>
@@ -53,7 +53,8 @@ export default {
                 email: this.email,
                 senha: this.senha,
                 tipo: 0
-            });            
+            });       
+                 
             this.$router.push('/login');
         }
     }

@@ -39,11 +39,9 @@
     import axios from 'axios'
     import cookies from 'vue-cookies'
 
-    const user = cookies.get('id');
-
     export default {
         name: 'Perfil',
-
+        
         data () {
             return {
             vnome: "Pessoa da Silva (carregando...)",
@@ -52,7 +50,8 @@
             vsenha: null,
             vdisabled: true,
             veditar: "Editar ",
-            vicon: "bi bi-pencil-fill"
+            vicon: "bi bi-pencil-fill",
+            user: cookies.get('id')
             }
         },
 
@@ -74,7 +73,7 @@
 
                     axios.put(
                         'https://localhost:3000/usuario', 
-                        { id: user, nome: this.vnome, email: this.vemail, telefone: this.vtelefone})
+                        { id: this.user, nome: this.vnome, email: this.vemail, telefone: this.vtelefone})
                     .then(response => ( 
                         this.alimentarUsuario(response.data) 
                     ))
@@ -86,7 +85,7 @@
         mounted() {
             axios.post(
                 'https://localhost:3000/usuario', 
-                { id: user})
+                { id: this.user})
             .then(response => ( 
                 this.alimentarUsuario(response.data) 
             ))

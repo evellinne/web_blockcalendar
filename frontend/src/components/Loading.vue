@@ -25,13 +25,10 @@ export default {
     .then(response => { 
         if(response.status === 200) {
           cookies.set('id', response.data.usuario.id)
-          router.push("../home");     
-          console.log(response)
+          router.push("../home");  
         }
         else console.error("loading.vue")
     })
-    
-    console.log('Teste:', this.$route.params.token)
   }
 }
 

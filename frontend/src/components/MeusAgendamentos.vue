@@ -39,14 +39,13 @@
     import axios from 'axios'
     import cookies from 'vue-cookies'
 
-    const user = cookies.get('id');
-
     export default {
         name: "MeusAgendamentos",
 
         data () {return {
             vnome: "Pessoa da Silva (carregando...)",
-            vprocedimentos: null
+            vprocedimentos: null,
+            user: cookies.get('id')
         }},
         methods: {
             async alimentarUsuario(usuario){
@@ -54,7 +53,7 @@
                 //Buscar procedimentos deste usuário
                 let response = await axios.post(
                     'https://localhost:3000/procedimentos-marcados',
-                    { id: user}
+                    { id: this.user}
                 );
                 if(!response.error) {
                     this.vprocedimentos = response.data;
@@ -64,7 +63,7 @@
         mounted() {
             axios.post(
                 'https://localhost:3000/usuario', 
-                { id: user})
+                { id: this.user})
             .then(response => ( 
                 this.alimentarUsuario(response.data) 
             ))

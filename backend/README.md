@@ -5,7 +5,6 @@
 > Precisa ter o MySql instalado 
 > 
 > Precisa ter as tabelas do Schema "projetoweb" prontas
-
 1. Depois de fazer o clone/pull do repositório, abra o terminal dentro da pasta "backend"
 2. Atualize os pacotes do node_modules
 `$ npm install`
@@ -16,11 +15,10 @@
 ## Usuario
 ### GET - Listar
 > URL: https://localhost:3000/usuarios
-
 Listar todos os usuários
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | - | - |
   |---|---|
@@ -50,11 +48,10 @@ Listar todos os usuários
   ```
 ### POST - porID
 > URL: https://localhost:3000/usuario
-
 Buscar usuário por ID
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -76,11 +73,10 @@ Buscar usuário por ID
   ```
 ### POST - Adicionar
 > URL: https://localhost:3000/cadastro
-
 Cadastrar um novo usuário (O é enviado um e-mail para este usuário para confirmar sua conta)
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -106,10 +102,9 @@ Cadastrar um novo usuário (O é enviado um e-mail para este usuário para confi
   ```
 ### PUT - Editar
 > URL: https://localhost:3000/usuario
-
 Edita informações do usuário
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -132,10 +127,9 @@ Edita informações do usuário
   ```
 ### DEL - Remover
 > URL: https://localhost:3000/usuario
-
 Remove um usuário
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -156,11 +150,10 @@ Remove um usuário
 
 ### POST - Login
 > URL: https://localhost:3000/login
-
 Fazer login
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -189,11 +182,10 @@ Fazer login
 
 ### GET - Listar
 > URL: https://localhost:3000/procedimento
-
 Listar todos os procedimentos
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | - | - |
   |---|---|
@@ -219,11 +211,10 @@ Listar todos os procedimentos
   ```
 ### POST - porID
 > URL: https://localhost:3000/procedimento
-
 Buscar procedimento por ID
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -241,52 +232,12 @@ Buscar procedimento por ID
     "nome": "Fazer x"
   }
   ```
-### POST - Procedidomento por UserID
-> URL: https://localhost:3000/procedimentos-marcados
-
-Buscar procedimento pelo id de um usuário.
-
-* AUTHORIZATION
-  
-* HEADERS
-  | Content-Type | application/json |
-  |--------------|------------------|
-* BODY
-  ```
-  {
-    "id": 3
-  }
-  ```
-* RESPONSE
-  ```
-[
-  {
-    "id": 3,
-    "hora": 14,
-    "dia": "2021-01-01",
-    "usuario_id": 3,
-    "procedimento_id": 2,
-    "usuario": {
-      "id": 3,
-      ....
-    },
-    "procedimento": {
-      "id": 2,
-      ...
-    }
-  },
-  {
-    ...
-  }
-]
-  ```
 ### POST - Adicionar
 > URL: https://localhost:3000/cadastrar-procedimento
-
 Cadastrar um novo procedimento
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -307,10 +258,9 @@ Cadastrar um novo procedimento
   ```
 ### PUT - Editar
 > URL: https://localhost:3000/procedimento
-
 Edita informações do usuário
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -332,10 +282,9 @@ Edita informações do usuário
   ```
 ### DEL - Remover
 > URL: https://localhost:3000/usuario
-
 Remove um usuário
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -356,11 +305,10 @@ Remove um usuário
 
 ### GET - Listar
 > URL: https://localhost:3000/usuarioprocedimentos
-
 Listar todos os usuariosprocedimentos
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | - | - |
   |---|---|
@@ -390,11 +338,10 @@ Listar todos os usuariosprocedimentos
   ```
 ### GET - Livres
 > URL: https://localhost:3000/procedimentos-livres
-
 Listar todos os usuariosprocedimentos livres
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | - | - |
   |---|---|
@@ -424,11 +371,10 @@ Listar todos os usuariosprocedimentos livres
   ```
 ### GET - Marcados
 > URL: https://localhost:3000/procedimentos-marcados
-
 Listar todos os usuariosprocedimentos marcados
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | - | - |
   |---|---|
@@ -464,11 +410,10 @@ Listar todos os usuariosprocedimentos marcados
   ```
 ### POST - porID
 > URL: https://localhost:3000/usuarioprocedimentos
-
 Buscar procedimentousuário por ID
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -501,11 +446,10 @@ Buscar procedimentousuário por ID
   ```
 ### POST - Adicionar
 > URL: https://localhost:3000/cadastrar-horarios
-
 Cadastrar um ou mais usuariosprocedimentos livres
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -543,11 +487,10 @@ Cadastrar um ou mais usuariosprocedimentos livres
   ```
 ### POST - marcar
 > URL: https://localhost:3000/marcar-horario
-
 Marcar um procedimento
 
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -571,10 +514,9 @@ Marcar um procedimento
   ```
 ### PUT - Editar
 > URL: https://localhost:3000/usuarioprocedimentos
-
 Edita informações de um usuário procedimento
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -597,10 +539,9 @@ Edita informações de um usuário procedimento
   ```
 ### DEL - Remover
 > URL: https://localhost:3000/usuario
-
 Remove um usuarioprocedimento
 * AUTHORIZATION
-  
+
 * HEADERS
   | Content-Type | application/json |
   |--------------|------------------|
@@ -616,5 +557,3 @@ Remove um usuarioprocedimento
     "Mensagem": "usuarioprocedimento de id: 7, deletado"
   }
   ```
-
-
